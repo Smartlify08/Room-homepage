@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --DarkGray: hsl(0, 0%, 63%);
+  --Black: hsl(0, 0%, 0%);
+  --White: hsl(0, 0%, 100%);
+  --VeryDarkGray: hsl(0, 0%, 27%);
+  --font-family: "League Spartan", sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+main {
+  position: relative;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+.header__nav__desktop {
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  position: absolute;
+  top: 30px;
+  z-index: 1;
+  left: 50px;
+}
+
+.header__nav__mobile {
+  display: none;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.logo,
+.nav__list__desktop li {
+  color: var(--White);
+}
+
+.nav__list__desktop {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav__list__desktop li {
+  font-size: 1.3rem;
+
+  cursor: pointer;
+}
+.slider__img__mobile {
+  display: none;
+}
+
+.slider__img__desktop,
+.slider__img {
+  object-fit: cover;
+  width: 100%;
+}
+.slider__img__desktop,
+.slider__content__header,
+.slider__content__description {
+  transition: all 0.5s;
+}
+.slider {
+  display: flex;
+}
+
+.slider__img {
+  flex: 4;
+}
+
+.slider__img img {
+  height: 100%;
+}
+
+.slider__content {
+  position: relative;
+  flex: 2;
+  padding: calc(4rem + 5vw) calc(15px + 5vw);
+}
+
+.slider__content header {
+  margin-bottom: 1.5rem;
+}
+
+.slider__content__header h2 {
+  font-size: calc(10px + 2.4vw);
+  font-weight: 700;
+}
+
+.slider__content p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: var(--DarkGray);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.slider__content a {
+  margin-top: 1.5rem;
+  color: var(--Black);
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 15px;
+}
+
+.slider__controls__desktop {
+  background-color: var(--Black);
+  position: absolute;
+  bottom: 0%;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  width: calc(2.5vw + 110px);
+  left: 0%;
+}
+
+.slider__controls__desktop img {
+  cursor: pointer;
+}
+
+.slider__controls__mobile {
+  display: none;
+}
+
+.about {
+  overflow: hidden;
+  display: flex;
+}
+
+.img__holder,
+.img__holder img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.img__holder img {
+  height: 100%;
+}
+
+.img__holder {
+  flex: 3;
+}
+
+.about__content {
+  flex: 3;
+  padding: calc(2rem + 2vw) calc(15px + 2vw);
+}
+
+.about__intro {
+  margin-bottom: 1rem;
+}
+
+.about__intro h2 {
+  font-size: 1.2rem;
+  letter-spacing: 7px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.about__content p {
+  font-size: 1.1rem;
+  color: var(--DarkGray);
+  line-height: 1.4;
+}
+
+@media (width < 768px) {
+  .header__nav__desktop {
+    display: none;
+  }
+  .header__nav__mobile {
+    display: flex;
+    gap: 5rem;
+    z-index: 1;
+    left: 50px;
+    position: absolute;
+    top: 50px;
+    align-items: center;
+  }
+
+  .nav__list__mobile {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .nav__list__mobile li {
+    color: var(--Black);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .slider {
+    flex-direction: column;
+  }
+
+  .slider__img {
+    position: relative;
+  }
+
+  .slider__img__desktop {
+    display: none;
+  }
+
+  .slider__img__mobile {
+    display: block;
+    width: 100%;
+  }
+
+  .slider__content__header h2 {
+    font-size: calc(11px + 6.5vw);
+    line-height: 0.9;
+    font-weight: 600;
+    letter-spacing: 0px;
+  }
+  .about {
+    overflow: hidden;
+    flex-direction: column;
+  }
+
+  .about__intro h2 {
+    font-size: 1.2rem;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: 4px;
+  }
+
+  .slider__controls__mobile {
+    display: flex;
+    background-color: var(--Black);
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+    width: calc(2vw + 120px);
+    padding: 20px 25px;
+    justify-content: space-between;
+  }
+
+  .slider__controls__desktop {
+    display: none;
+  }
+
+  .img__holder,
+  .img__holder img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  /* Active nav */
+  .header__nav__mobile.active {
+    background-color: var(--White);
+    padding: 25px 20px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    gap: 0rem;
+  }
+
+  .logo.removed {
+    display: none;
+  }
+
+  .nav__list__mobile.active {
+    display: flex;
+  }
+  .nav__list__mobile {
+    display: none;
+  }
+}
